@@ -6,7 +6,7 @@
       title: "Ouroboros",
       image: "ouroboros.png",
       description: "3 dragon-like serpents eating each other's tails",
-      targetURL: "http://ilovelife.com"
+      targetURL: "ouroboros"
     },
     {
       title: "🎈Billow 🎈",
