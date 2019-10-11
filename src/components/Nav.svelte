@@ -59,13 +59,13 @@
       <a class={segment === 'about' ? 'selected' : ''} href="about">about</a>
     </li>
     <li>
-      <a class={segment === 'projects' ? 'selected' : ''} href="projects">
-        projects
+      <a class={segment === 'writing' ? 'selected' : ''} href="writing">
+        writing
       </a>
     </li>
     <li>
-      <a class={segment === 'writing' ? 'selected' : ''} href="writing">
-        writing
+      <a class={segment === 'projects' ? 'selected' : ''} href="projects">
+        projects
       </a>
     </li>
   </ul>
