@@ -40,3 +40,8 @@ code {
     font-size: 16px;
   }
 }
+
+.route-animation-container {
+  position: absolute;
+  width: 100%;
+}

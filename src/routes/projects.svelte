@@ -18,12 +18,12 @@
 </script>
 
 <style>
-  div:first-of-type {
+  .route-animation-container {
     margin-top: 10vh;
   }
 </style>
 
-<div>
+<div class="route-animation-container">
   {#each data as d}
     <PicLink
       title={d.title}

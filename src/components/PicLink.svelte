@@ -1,4 +1,6 @@
 <script>
+  import { send, receive } from "../components/crossfade.js";
+
   /**
    * The PicLink component presents a title with an image and
    * applies the target link to both
@@ -31,6 +33,14 @@
 </style>
 
 <a href={targetURL}>
-  <img src={imageURL} alt={description} />
-  <h1>{title}</h1>
+  <img
+    in:receive={{ key: `img${title}` }}
+    out:send={{ key: `img${title}` }}
+    src={imageURL}
+    alt={description} />
+  <h1
+    in:receive={{ key: `h1${title.toLowerCase()}` }}
+    out:send={{ key: `h1${title.toLowerCase()}` }}>
+    {title}
+  </h1>
 </a>

@@ -1,4 +1,6 @@
 <script>
+  import { send, receive } from "../../components/crossfade.js";
+
   function typewriter(node, { speed = 50, delay = 0 }) {
     const valid =
       node.childNodes.length === 1 && node.childNodes[0].nodeType === 3;
@@ -34,5 +36,11 @@
   }
 </style>
 
-<h1>Ouroboros</h1>
-<h2 in:typewriter={{ delay: 2000 }}>The story that tells itself</h2>
+<div class="route-animation-container">
+  <h1 in:receive={{ key: `h1ouroborous` }} out:send={{ key: `h1ouroborous` }}>
+    Ouroboros
+  </h1>
+  <h2 in:typewriter={{ delay: 800, speed: 25 }} out:typewriter={{ speed: 10 }}>
+    The story that tells itself
+  </h2>
+</div>
