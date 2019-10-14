@@ -37,9 +37,11 @@
 </style>
 
 <div class="route-animation-container">
-  <h1 in:receive={{ key: `h1ouroborous` }} out:send={{ key: `h1ouroborous` }}>
-    Ouroboros
-  </h1>
+  <a href="projects">
+    <h1 in:receive={{ key: `h1ouroborous` }} out:send={{ key: `h1ouroborous` }}>
+      Ouroboros
+    </h1>
+  </a>
   <h2 in:typewriter={{ delay: 800, speed: 25 }} out:typewriter={{ speed: 10 }}>
     The story that tells itself
   </h2>
