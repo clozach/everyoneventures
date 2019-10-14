@@ -44,7 +44,7 @@
     left: 4.5rem;
   }
 
-  .positioner {
+  .shrinkwrap {
     width: fit-content;
   }
 
@@ -55,7 +55,7 @@
 
 <div class="route-animation-container">
   <a href="projects">
-    <div class="positioner">
+    <div class="shrinkwrap">
       <img
         in:receive={{ key: `img${title}` }}
         out:send={{ key: `img${title}` }}

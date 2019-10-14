@@ -22,7 +22,7 @@
     margin-bottom: 3rem;
   }
 
-  .positioner {
+  .shrinkwrap {
     width: fit-content;
     text-align: center;
     margin: 0 auto;
@@ -31,7 +31,7 @@
 
 <a href={targetURL}>
   <div class="centerer">
-    <div class="positioner">
+    <div class="shrinkwrap">
       <img
         in:receive={{ key: `img${title.toLowerCase()}` }}
         out:send={{ key: `img${title.toLowerCase()}` }}
