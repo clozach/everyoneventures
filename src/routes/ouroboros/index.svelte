@@ -45,7 +45,6 @@
   }
 
   .positioner {
-    padding: 0.1rem;
     width: fit-content;
   }
 
@@ -62,9 +61,6 @@
         out:send={{ key: `img${title}` }}
         src="ouroboros.png"
         alt="Ourobodammitduplication!!! I need a plan" />
-    </div>
-
-    <div class="positioner">
       <h1
         out:send={{ key: `title${title}` }}
         in:receive={{ key: `title${title}` }}>

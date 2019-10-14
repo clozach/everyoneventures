@@ -30,16 +30,13 @@
 </style>
 
 <a href={targetURL}>
-  <div class="positioner">
-    <img
-      in:receive={{ key: `img${title.toLowerCase()}` }}
-      out:send={{ key: `img${title.toLowerCase()}` }}
-      src={imageURL}
-      alt={description} />
-  </div>
-
   <div class="centerer">
     <div class="positioner">
+      <img
+        in:receive={{ key: `img${title.toLowerCase()}` }}
+        out:send={{ key: `img${title.toLowerCase()}` }}
+        src={imageURL}
+        alt={description} />
       <h3
         out:send={{ key: `title${title.toLowerCase()}` }}
         in:receive={{ key: `title${title.toLowerCase()}` }}>
