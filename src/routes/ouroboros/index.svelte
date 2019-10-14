@@ -1,4 +1,5 @@
 <script>
+  import { fade } from "svelte/transition";
   import { send, receive } from "../../components/crossfade.js";
 
   function typewriter(node, { speed = 50, delay = 0 }) {
@@ -23,7 +24,10 @@
       }
     };
   }
+
   const title = "ouroboros";
+
+  let showText = false;
 </script>
 
 <style>
@@ -68,7 +72,27 @@
       </h1>
     </div>
   </a>
-  <h2 in:typewriter={{ delay: 800, speed: 90 }} out:typewriter={{ speed: 5 }}>
+  <h2
+    in:typewriter={{ delay: 800, speed: 90 }}
+    out:typewriter={{ speed: 5 }}
+    on:mouseenter={() => (showText = true)}>
     The story that tells itself
   </h2>
+  {#if showText}
+    <p in:typewriter={{ speed: 1 }} out:fade={{ duration: 100 }}>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+      sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+      diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+      erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+      rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+      dolor sit amet.
+    </p>
+  {/if}
 </div>
