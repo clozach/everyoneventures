@@ -14,11 +14,12 @@
 
 <style>
   img {
-    width: 30%;
+    width: 12rem;
   }
 
   h3 {
     font-size: 2.5rem;
+    margin-bottom: 3rem;
   }
 
   .positioner {

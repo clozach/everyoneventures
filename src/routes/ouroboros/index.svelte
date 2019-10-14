@@ -68,7 +68,7 @@
       </h1>
     </div>
   </a>
-  <h2 in:typewriter={{ delay: 800, speed: 25 }} out:typewriter={{ speed: 10 }}>
+  <h2 in:typewriter={{ delay: 800, speed: 90 }} out:typewriter={{ speed: 5 }}>
     The story that tells itself
   </h2>
 </div>
