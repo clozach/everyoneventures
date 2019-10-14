@@ -23,24 +23,50 @@
       }
     };
   }
+  const title = "ouroboros";
 </script>
 
 <style>
-  h1 {
-    margin-top: 13rem;
-    font-size: 4rem;
+  img {
+    width: 4rem;
+    position: relative;
+    top: 4rem;
+    filter: grayscale();
   }
 
-  h2 {
-    font-size: 2rem;
+  h1 {
+    font-size: 4rem;
+    position: relative;
+    left: 4.5rem;
+  }
+
+  .positioner {
+    padding: 0.1rem;
+    width: fit-content;
+  }
+
+  .route-animation-container {
+    margin-left: 6rem;
   }
 </style>
 
 <div class="route-animation-container">
   <a href="projects">
-    <h1 in:receive={{ key: `h1ouroborous` }} out:send={{ key: `h1ouroborous` }}>
-      Ouroboros
-    </h1>
+    <div class="positioner">
+      <img
+        in:receive={{ key: `img${title}` }}
+        out:send={{ key: `img${title}` }}
+        src="ouroboros.png"
+        alt="Ourobodammitduplication!!! I need a plan" />
+    </div>
+
+    <div class="positioner">
+      <h1
+        out:send={{ key: `title${title}` }}
+        in:receive={{ key: `title${title}` }}>
+        Ouroboros
+      </h1>
+    </div>
   </a>
   <h2 in:typewriter={{ delay: 800, speed: 25 }} out:typewriter={{ speed: 10 }}>
     The story that tells itself

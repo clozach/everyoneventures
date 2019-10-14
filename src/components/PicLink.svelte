@@ -13,34 +13,37 @@
 </script>
 
 <style>
-  img,
-  h1 {
-    display: block;
-    margin: 1rem auto;
-  }
-  h1 {
-    text-align: center;
-    font-size: 2.5rem;
-  }
   img {
     width: 30%;
-    max-width: 10rem;
-    margin-top: 4vh;
   }
-  a {
-    text-decoration: none;
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  .positioner {
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
   }
 </style>
 
 <a href={targetURL}>
-  <img
-    in:receive={{ key: `img${title}` }}
-    out:send={{ key: `img${title}` }}
-    src={imageURL}
-    alt={description} />
-  <h1
-    in:receive={{ key: `h1${title.toLowerCase()}` }}
-    out:send={{ key: `h1${title.toLowerCase()}` }}>
-    {title}
-  </h1>
+  <div class="positioner">
+    <img
+      in:receive={{ key: `img${title.toLowerCase()}` }}
+      out:send={{ key: `img${title.toLowerCase()}` }}
+      src={imageURL}
+      alt={description} />
+  </div>
+
+  <div class="centerer">
+    <div class="positioner">
+      <h3
+        out:send={{ key: `title${title.toLowerCase()}` }}
+        in:receive={{ key: `title${title.toLowerCase()}` }}>
+        {title}
+      </h3>
+    </div>
+  </div>
 </a>
