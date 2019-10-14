@@ -15,7 +15,7 @@ const [send, receive] = crossfade({
     };
   },
   delay: 0,
-  duration: d => Math.sqrt(d * 300),
+  duration: d => Math.sqrt(d * 3000),
   easing: quintOut,
 });
 
