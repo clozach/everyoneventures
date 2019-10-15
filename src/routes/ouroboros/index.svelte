@@ -8,6 +8,7 @@
 
   const title = "ouroboros";
   let showText = false;
+  let keydownText = "";
 
   function typewriter(node, { speed = 50, delay = 0 }) {
     const valid =
@@ -34,22 +35,21 @@
 
   let displayResetTimeout;
   const keydownHandler = event => {
-    const display = document.getElementById("keytext");
     const key = event.key;
 
     if (key === "Escape") {
       showText = false;
+      keydownText = "";
       return;
     }
 
-    if (!display) return;
     if (isUnprintable.test(key)) return;
 
-    keytext.innerHTML = keytext.innerHTML + key;
+    keydownText = keydownText + key;
 
     clearTimeout(displayResetTimeout);
     displayResetTimeout = setTimeout(() => {
-      keytext.innerHTML = "";
+      keydownText = "";
     }, 1000);
   };
   const displayAndResetKeyPresses = () => {
@@ -121,7 +121,7 @@
     The story that tells itself
   </h2>
   {#if showText}
-    <p in:typewriter={{ speed: 1 }} out:fade={{ duration: 100 }}>
+    <p in:typewriter={{ delay: 500, speed: 1 }} out:fade={{ duration: 100 }}>
       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
       eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
       voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
@@ -136,7 +136,7 @@
       rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
       dolor sit amet.
     </p>
-  {:else}
-    <p id="keytext" />
+  {:else if keydownText.length > 0}
+    <p transition:fade>{keydownText}</p>
   {/if}
 </div>
