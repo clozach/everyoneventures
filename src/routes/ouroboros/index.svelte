@@ -2,6 +2,7 @@
   import { fade } from "svelte/transition";
   import Mousetrap from "mousetrap";
   import { send, receive } from "../../components/crossfade.js";
+  import { isUnprintable } from "../../components/unprintable-unicode.js";
 
   const title = "ouroboros";
   let showText = false;
@@ -29,9 +30,28 @@
     };
   }
 
+  let displayResetTimeout;
+  const displayAndResetKeyPresses = () => {
+    document.addEventListener("keydown", event => {
+      const display = document.getElementById("keytext");
+      const key = event.key;
+
+      if (!display) return;
+      if (isUnprintable.test(key)) return;
+
+      keytext.innerHTML = keytext.innerHTML + key;
+
+      clearTimeout(displayResetTimeout);
+      displayResetTimeout = setTimeout(() => {
+        keytext.innerHTML = "";
+      }, 1000);
+    });
+  };
+  displayAndResetKeyPresses();
+
   // Also worth considering: https://dmauro.github.io/Keypress/
   // (larger, but with interesting extensions)
-  Mousetrap.bind(["o u r o b o r o s", "O u r o b o r o s"], () => {
+  Mousetrap.bind(["o u r o b o r o s", "O u r o b o r o s"], (foo, bar) => {
     showText = true;
   });
 </script>
@@ -93,5 +113,7 @@
       rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
       dolor sit amet.
     </p>
+  {:else}
+    <p id="keytext" />
   {/if}
 </div>
