@@ -1,6 +1,8 @@
 <script>
+  import { afterUpdate } from "svelte";
   import { fade } from "svelte/transition";
   import Mousetrap from "mousetrap";
+  import TweenMax from "gsap";
   import { send, receive } from "../../components/crossfade.js";
   import { isUnprintable } from "../../components/unprintable-unicode.js";
 
@@ -59,6 +61,16 @@
   Mousetrap.bind(["o u r o b o r o s", "O u r o b o r o s"], (foo, bar) => {
     showText = true;
   });
+
+  afterUpdate(() => {
+    setTimeout(() => {
+      TweenMax.to("#logo", 360, {
+        rotation: -360,
+        ease: Linear.easeNone,
+        repeat: -1
+      });
+    }, 1000);
+  });
 </script>
 
 <style>
@@ -85,9 +97,10 @@
 </style>
 
 <div class="route-animation-container">
-  <a href="projects">
+  <a href="projects" on:click={() => TweenMax.to('#logo', 0, { rotation: 0 })}>
     <div class="shrinkwrap">
       <img
+        id="logo"
         in:receive={{ key: `img${title}` }}
         out:send={{ key: `img${title}` }}
         src="ouroboros.png"
