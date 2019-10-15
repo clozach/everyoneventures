@@ -36,6 +36,11 @@
       const display = document.getElementById("keytext");
       const key = event.key;
 
+      if (key === "Escape") {
+        showText = false;
+        return;
+      }
+
       if (!display) return;
       if (isUnprintable.test(key)) return;
 
