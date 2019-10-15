@@ -1,5 +1,5 @@
 <script>
-  import { afterUpdate } from "svelte";
+  import { onMount, onDestroy, afterUpdate } from "svelte";
   import { fade } from "svelte/transition";
   import Mousetrap from "mousetrap";
   import TweenMax from "gsap";
@@ -33,28 +33,31 @@
   }
 
   let displayResetTimeout;
-  const displayAndResetKeyPresses = () => {
-    document.addEventListener("keydown", event => {
-      const display = document.getElementById("keytext");
-      const key = event.key;
+  const keydownHandler = event => {
+    const display = document.getElementById("keytext");
+    const key = event.key;
 
-      if (key === "Escape") {
-        showText = false;
-        return;
-      }
+    if (key === "Escape") {
+      showText = false;
+      return;
+    }
 
-      if (!display) return;
-      if (isUnprintable.test(key)) return;
+    if (!display) return;
+    if (isUnprintable.test(key)) return;
 
-      keytext.innerHTML = keytext.innerHTML + key;
+    keytext.innerHTML = keytext.innerHTML + key;
 
-      clearTimeout(displayResetTimeout);
-      displayResetTimeout = setTimeout(() => {
-        keytext.innerHTML = "";
-      }, 1000);
-    });
+    clearTimeout(displayResetTimeout);
+    displayResetTimeout = setTimeout(() => {
+      keytext.innerHTML = "";
+    }, 1000);
   };
-  displayAndResetKeyPresses();
+  const displayAndResetKeyPresses = () => {
+    document.addEventListener("keydown", keydownHandler);
+  };
+
+  let stopKeyPresses = () =>
+    document.removeEventListener("keydown", keydownHandler);
 
   // Also worth considering: https://dmauro.github.io/Keypress/
   // (larger, but with interesting extensions)
@@ -62,6 +65,8 @@
     showText = true;
   });
 
+  onMount(displayAndResetKeyPresses);
+  onDestroy(stopKeyPresses);
   afterUpdate(() => {
     setTimeout(() => {
       TweenMax.to("#logo", 360, {
