@@ -6,9 +6,12 @@
   nav {
     position: absolute;
     bottom: 0;
+    border: 0.2rem solid white;
     border-bottom: 1px solid rgba(255, 62, 0, 0.1);
+    background-color: #ffffffcc;
     font-weight: 300;
     padding: 0 1em;
+    z-index: 1000;
   }
 
   ul {
@@ -47,6 +50,7 @@
     text-decoration: none;
     padding: 1em 0.5em;
     display: block;
+    cursor: pointer;
   }
 </style>
 
