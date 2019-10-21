@@ -99,10 +99,6 @@
   .shrinkwrap {
     width: fit-content;
   }
-
-  .route-animation-container {
-    margin-left: 6rem;
-  }
 </style>
 
 <div class="route-animation-container">
