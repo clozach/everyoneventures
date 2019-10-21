@@ -46,3 +46,13 @@ code {
   position: absolute;
   width: 100%;
 }
+
+/* Ensure box-sizing defaults to border-box whiles till 
+allowing for the occasional `content-box` overrides.
+From https://css-tricks.com/box-sizing/ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
