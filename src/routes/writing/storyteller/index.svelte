@@ -1,4 +1,8 @@
 <script>
+  // ____ ___ ____ ____ _   _ ___ ____ _    _    ____ ____
+  // [__   |  |  | |__/  \_/   |  |___ |    |    |___ |__/
+  // ___]  |  |__| |  \   |    |  |___ |___ |___ |___ |  \
+
   import { onMount, onDestroy, afterUpdate } from "svelte";
   import { fade } from "svelte/transition";
   import Mousetrap from "mousetrap";
