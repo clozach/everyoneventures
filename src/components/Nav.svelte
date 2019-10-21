@@ -14,7 +14,7 @@
 
 <style>
   nav {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     border: 0.2rem solid white;
     background-color: #ffffffcc;

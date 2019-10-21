@@ -20,7 +20,6 @@
 
 <style>
   main {
-    position: relative;
     max-width: 56em;
     background-color: white;
     height: 100vh;

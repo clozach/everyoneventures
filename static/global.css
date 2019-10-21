@@ -45,6 +45,7 @@ code {
 .route-animation-container {
   position: absolute;
   width: 100%;
+  margin-bottom: 10rem;
 }
 
 /* Ensure box-sizing defaults to border-box whiles till 
