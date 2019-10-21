@@ -1,10 +1,14 @@
 <script>
+  // ____ _  _ ____ ____ ___  ____ ____ ____ ____
+  // |  | |  | |__/ |  | |__] |  | |__/ |  | [__
+  // |__| |__| |  \ |__| |__] |__| |  \ |__| ___]
+
   import { onMount, onDestroy, afterUpdate } from "svelte";
   import { fade } from "svelte/transition";
   import Mousetrap from "mousetrap";
   import TweenMax from "gsap";
-  import { send, receive } from "../../components/crossfade.js";
-  import { isUnprintable } from "../../components/unprintable-unicode.js";
+  import { send, receive } from "../../../components/crossfade.js";
+  import { isUnprintable } from "../../../components/unprintable-unicode.js";
 
   const title = "ouroboros";
   let showText = false;

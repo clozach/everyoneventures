@@ -1,12 +1,12 @@
 <script>
-  import PicLink from "../components/PicLink.svelte";
+  import PicLink from "../../components/PicLink.svelte";
 
   let data = [
     {
       title: "Ouroboros",
       image: "ouroboros.png",
       description: "3 dragon-like serpents eating each other's tails",
-      targetURL: "ouroboros"
+      targetURL: "/projects/ouroboros/"
     },
     {
       title: "🎈Billow 🎈",

@@ -89,7 +89,7 @@
   <nav>
     <a
       class="ouroboros"
-      href="/projects"
+      href="/projects/ouroboros"
       in:receive={{ key: 'ooo' }}
       out:send={{ key: 'ooo' }}>
       <div class="e">e</div>
