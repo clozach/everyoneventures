@@ -6,7 +6,7 @@
       title: "TheStoryteller()",
       image: "storyteller.png",
       description: "Dragon eating its own tail.",
-      targetURL: "/projects"
+      targetURL: "/writing/storyteller/"
     },
     {
       title: "Learning in Public",
