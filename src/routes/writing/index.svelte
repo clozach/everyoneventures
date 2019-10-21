@@ -1,5 +1,5 @@
 <script>
-  import PicLink from "../components/PicLink.svelte";
+  import PicLink from "../../components/PicLink.svelte";
 
   let data = [
     {
