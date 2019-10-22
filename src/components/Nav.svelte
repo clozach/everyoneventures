@@ -68,18 +68,14 @@
     bottom: -1px;
   }
 
-  a {
-    text-decoration: none;
+  li > a {
     padding: 1rem 0.5rem;
-    display: block;
-    cursor: pointer;
   }
 
-  .ouroboros {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 4rem;
+  a {
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
   }
 
   .e {
@@ -94,7 +90,7 @@
     font-size: 3.3rem;
     position: absolute;
     bottom: -0.9rem;
-    left: 2.4rem;
+    left: 1.8rem;
   }
 </style>
 
