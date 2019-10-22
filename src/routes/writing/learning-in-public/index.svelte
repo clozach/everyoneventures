@@ -16,8 +16,10 @@
   import { onMount, onDestroy } from "svelte";
   import { fade } from "svelte/transition";
   import { send, receive } from "../../../components/crossfade.js";
+  import { worlds } from "../../Model.js";
 
-  const title = "learning in public";
+  const model = worlds.writing[1]; // A bit hacky. Got a better idea? 😬
+  const lcTitle = model.title.toLowerCase();
 </script>
 
 <style>
@@ -64,16 +66,16 @@
 
 <div class="route-animation-container">
   <img
-    in:receive={{ key: `img${title}` }}
-    out:send={{ key: `img${title}` }}
-    src="learning.svg"
-    alt="TODO: Refactor so alt uses src text or summat." />
+    in:receive={{ key: `img${lcTitle}` }}
+    out:send={{ key: `img${lcTitle}` }}
+    src={model.image}
+    alt={model.description} />
   <a href="writing">
     <div class="shrinkwrap positioner">
       <h1
-        out:send={{ key: `title${title}` }}
-        in:receive={{ key: `title${title}` }}>
-        Learning in Public
+        out:send={{ key: `title${lcTitle}` }}
+        in:receive={{ key: `title${lcTitle}` }}>
+        {model.title}
       </h1>
     </div>
   </a>

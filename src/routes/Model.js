@@ -12,7 +12,7 @@ export const worlds = {
       image: "learning.svg",
       description:
         "Cloud of letters, roughly in the shape of a mammalian brain viewed from the side.",
-      targetURL: "/writing/learning-in-public"
+      targetURL: "/writing/learning-in-public/"
     }
   ],
   projects: [
@@ -26,7 +26,7 @@ export const worlds = {
       title: "🎈Billow 🎈",
       image: "billow-logo.png",
       description: "Red balloon",
-      targetURL: "http://google.com"
+      targetURL: "/projects/billow/"
     }
   ]
 }

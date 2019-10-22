@@ -10,12 +10,11 @@
   import { send, receive } from "../../../components/crossfade.js";
   import { isUnprintable } from "../../../components/unprintable-unicode.js";
   import { oneOf } from "../../../generically-useful/array-manipulating-functions.js";
+  import { worlds } from "../../Model.js";
 
-  const title = "thestoryteller()";
-  let initialText = "";
-  let keydownText = "";
-
-  let pronouncement =
+  const model = worlds.writing[0]; // A bit hacky. Got a better idea? 😬
+  const lcTitle = model.title.toLowerCase();
+  const pronouncement =
     oneOf([
       "I",
       "He",
@@ -28,6 +27,9 @@
       "Seh",
       "We"
     ]) + " did it!";
+
+  let initialText = "";
+  let keydownText = "";
 
   function typewriter(node, { speed = 50, delay = 0 }) {
     const valid =
@@ -121,14 +123,14 @@
     <div class="shrinkwrap">
       <img
         id="logo"
-        in:receive={{ key: `img${title}` }}
-        out:send={{ key: `img${title}` }}
-        src="storyteller.png"
-        alt="TODO: Refactor so alt uses src text or summat." />
+        in:receive={{ key: `img${lcTitle}` }}
+        out:send={{ key: `img${lcTitle}` }}
+        src={model.image}
+        alt={model.description} />
       <h1
-        out:send={{ key: `title${title}` }}
-        in:receive={{ key: `title${title}` }}>
-        TheStoryteller()
+        out:send={{ key: `title${lcTitle}` }}
+        in:receive={{ key: `title${lcTitle}` }}>
+        {model.title}
       </h1>
     </div>
   </a>

@@ -9,8 +9,11 @@
   import TweenMax from "gsap";
   import { send, receive } from "../../../components/crossfade.js";
   import { isUnprintable } from "../../../components/unprintable-unicode.js";
+  import { worlds } from "../../Model.js";
 
-  const title = "ouroboros";
+  const model = worlds.projects[0]; // A bit hacky. Got a better idea? 😬
+  const lcTitle = model.title.toLowerCase();
+
   let showText = false;
   let keydownText = "";
 
@@ -106,14 +109,14 @@
     <div class="shrinkwrap">
       <img
         id="logo"
-        in:receive={{ key: `img${title}` }}
-        out:send={{ key: `img${title}` }}
-        src="ouroboros.png"
-        alt="Ourobodammitduplication!!! I need a plan" />
+        in:receive={{ key: `img${lcTitle}` }}
+        out:send={{ key: `img${lcTitle}` }}
+        src={model.image}
+        alt={model.description} />
       <h1
-        out:send={{ key: `title${title}` }}
-        in:receive={{ key: `title${title}` }}>
-        Ouroboros
+        out:send={{ key: `title${lcTitle}` }}
+        in:receive={{ key: `title${lcTitle}` }}>
+        {model.title}
       </h1>
     </div>
   </a>
