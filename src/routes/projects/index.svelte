@@ -7,21 +7,7 @@
   // ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   ╚══════╝
 
   import PicLink from "../../components/PicLink.svelte";
-
-  let data = [
-    {
-      title: "Ouroboros",
-      image: "ouroboros.png",
-      description: "3 dragon-like serpents eating each other's tails",
-      targetURL: "/projects/ouroboros/"
-    },
-    {
-      title: "🎈Billow 🎈",
-      image: "billow-logo.png",
-      description: "Red balloon",
-      targetURL: "http://google.com"
-    }
-  ];
+  import { worlds } from "../Model.js";
 </script>
 
 <style>
@@ -31,7 +17,7 @@
 </style>
 
 <div class="route-animation-container">
-  {#each data as d}
+  {#each worlds.projects as d}
     <PicLink
       title={d.title}
       imageURL={d.image}

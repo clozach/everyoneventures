@@ -7,22 +7,7 @@
   //  ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝   ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝
 
   import PicLink from "../../components/PicLink.svelte";
-
-  let data = [
-    {
-      title: "TheStoryteller()",
-      image: "storyteller.png",
-      description: "Dragon eating its own tail.",
-      targetURL: "/writing/storyteller/"
-    },
-    {
-      title: "Learning in Public",
-      image: "learning.svg",
-      description:
-        "Cloud of letters, roughly in the shape of a mammalian brain viewed from the side.",
-      targetURL: "/writing/learning-in-public"
-    }
-  ];
+  import { worlds } from "../Model.js";
 </script>
 
 <style>
@@ -32,7 +17,7 @@
 </style>
 
 <div class="route-animation-container">
-  {#each data as d}
+  {#each worlds.writing as d}
     <PicLink
       title={d.title}
       imageURL={d.image}
