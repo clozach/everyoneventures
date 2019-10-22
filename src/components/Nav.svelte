@@ -62,8 +62,8 @@
     position: absolute;
     content: "";
     width: calc(100% - 1em);
-    height: 2px;
-    background-color: rgb(255, 62, 0);
+    height: 0.5rem;
+    background-color: hsl(243, 90%, 65%);
     display: block;
     bottom: -1px;
   }
