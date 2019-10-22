@@ -20,7 +20,7 @@
       image: "learning.svg",
       description:
         "Cloud of letters, roughly in the shape of a mammalian brain viewed from the side.",
-      targetURL: "/"
+      targetURL: "/writing/learning-in-public"
     }
   ];
 </script>
