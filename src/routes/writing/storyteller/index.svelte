@@ -9,6 +9,7 @@
   import TweenMax from "gsap";
   import { send, receive } from "../../../components/crossfade.js";
   import { isUnprintable } from "../../../components/unprintable-unicode.js";
+  import { typewriter } from "../../../components/typewriter-transition.js";
   import { oneOf } from "../../../generically-useful/array-manipulating-functions.js";
   import { worlds } from "../../Model.js";
 
@@ -30,29 +31,6 @@
 
   let initialText = "";
   let keydownText = "";
-
-  function typewriter(node, { speed = 50, delay = 0 }) {
-    const valid =
-      node.childNodes.length === 1 && node.childNodes[0].nodeType === 3;
-
-    if (!valid) {
-      throw new Error(
-        `This transition only works on elements with a single text node child`
-      );
-    }
-
-    const text = node.textContent;
-    const duration = text.length * speed;
-
-    return {
-      delay,
-      duration,
-      tick: t => {
-        const i = ~~(text.length * t);
-        node.textContent = text.slice(0, i);
-      }
-    };
-  }
 
   let displayResetTimeout;
   const keydownHandler = event => {
