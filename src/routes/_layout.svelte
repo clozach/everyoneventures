@@ -28,6 +28,10 @@
   }
 </style>
 
+<svelte:head>
+  <title>everyone.ventures</title>
+</svelte:head>
+
 <Nav {segment} />
 
 <main>

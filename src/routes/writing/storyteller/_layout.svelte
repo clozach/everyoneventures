@@ -6,4 +6,8 @@
   onDestroy(() => ($navType = navTypes.top));
 </script>
 
+<svelte:head>
+  <title>TheStoryteller()</title>
+</svelte:head>
+
 <slot />
