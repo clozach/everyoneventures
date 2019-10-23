@@ -5,83 +5,18 @@
   // ██║╚██╔╝██║██╔══██║██║██║╚██╗██║    ██║██║╚██╗██║██║  ██║██╔══╝   ██╔██╗
   // ██║ ╚═╝ ██║██║  ██║██║██║ ╚████║    ██║██║ ╚████║██████╔╝███████╗██╔╝ ██╗
   // ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝    ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
-
-  export function preload({ params, query }) {
-    return this.fetch(`blog.json`)
-      .then(r => r.json())
-      .then(posts => {
-        return { posts };
-      });
-  }
 </script>
 
 <script>
-  export let posts;
+
 </script>
 
 <style>
-  h1,
-  figure,
-  p {
-    text-align: center;
-    margin: 0 auto;
-  }
-
   h1 {
-    font-size: 2.8em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0 0 0.5em 0;
-  }
-
-  figure {
-    margin: 0 0 1em 0;
-  }
-
-  img {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 0 1em 0;
-  }
-
-  p {
-    margin: 1em auto;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      font-size: 4em;
-    }
+    margin: 0 auto;
+    margin-top: 45vh;
+    display: table; /* Tricks the text into respecting the centering margin 🙄 */
   }
 </style>
 
-<svelte:head>
-  <title>everyone.ventures</title>
-</svelte:head>
-
-<h1>Great success!</h1>
-
-<figure>
-  <img alt="Borat" src="great-success.png" />
-  <figcaption>HIGH FIVE!</figcaption>
-</figure>
-
-<p>
-  <strong>
-    Try editing this file (src/routes/index.svelte) to test live reloading.
-  </strong>
-</p>
-
-<h1>Recent posts</h1>
-
-<ul>
-  {#each posts as post}
-    <!-- we're using the non-standard `rel=prefetch` attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
-    <li>
-      <a rel="prefetch" href="blog/{post.slug}">{post.title}</a>
-    </li>
-  {/each}
-</ul>
+<h1>Content TBD</h1>

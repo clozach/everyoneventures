@@ -130,14 +130,6 @@
           class={segment === undefined ? 'selected' : ''}
           href="."
           transition:fly={flightTransition}>
-          recent
-        </a>
-      </li>
-      <li>
-        <a
-          class={segment === 'about' ? 'selected' : ''}
-          href="about"
-          transition:fly={flightTransition}>
           about
         </a>
       </li>
