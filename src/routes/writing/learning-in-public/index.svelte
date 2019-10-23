@@ -27,7 +27,7 @@
     width: 200vw;
     left: -50vw;
     position: fixed;
-    filter: grayscale() blur(0.5rem) opacity(25%);
+    filter: grayscale() blur(0.1rem) opacity(6%);
   }
 
   .positioner {

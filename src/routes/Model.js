@@ -9,7 +9,7 @@ export const worlds = {
     },
     {
       title: "Learning in Public",
-      image: "learning.svg",
+      image: "learning.png",
       description:
         "Cloud of letters, roughly in the shape of a mammalian brain viewed from the side.",
       targetURL: "/writing/learning-in-public"
