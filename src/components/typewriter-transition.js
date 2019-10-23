@@ -1,10 +1,11 @@
+// https://svelte.dev/docs#writable
 export function typewriter(node, { speed = 50, delay = 0 }) {
   const valid =
     node.childNodes.length === 1 && node.childNodes[0].nodeType === 3;
 
   if (!valid) {
-    throw new Error(
-      `This transition only works on elements with a single text node child`
+    console.log(
+      `The "typewriter" transition only works on elements with a single text node child.`
     );
   }
 
