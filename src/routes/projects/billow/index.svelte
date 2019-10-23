@@ -47,6 +47,7 @@
   }
 
   h1 {
+    font-family: "Elsie";
     font-size: 4rem;
     position: absolute;
     top: 8.5rem;
@@ -54,9 +55,17 @@
   }
 
   h2 {
+    font-family: "Lora";
     position: absolute;
     top: 14rem;
     left: 16rem;
+  }
+
+  sup {
+    font-size: x-large;
+    position: relative;
+    top: -1rem;
+    left: -4.4rem;
   }
 
   .shrinkwrap {
@@ -81,7 +90,8 @@
       <h1
         out:send={{ key: `title${lcTitle}` }}
         in:receive={{ key: `title${lcTitle}` }}>
-        {model.title}
+        🎈Billow🎈
+        <sup>™</sup>
       </h1>
     </div>
   </a>
