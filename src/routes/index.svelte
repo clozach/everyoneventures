@@ -143,12 +143,8 @@
 <h1 out:send={{ key: `e` }} id={e}>e</h1>
 <h1 out:send={{ key: `v` }} id={v}>v</h1>
 {#if showFullText}
-  <h1 in:receive={{ key: `e` }} out:typewriter={{ speed: 30 }} id={everyone}>
-    everyone
-  </h1>
-  <h1 in:receive={{ key: `v` }} out:typewriter={{ speed: 30 }} id={ventures}>
-    ventures
-  </h1>
+  <h1 out:typewriter={{ speed: 30 }} id={everyone}>everyone</h1>
+  <h1 out:typewriter={{ speed: 30 }} id={ventures}>ventures</h1>
 {/if}
 
 {#each worlds as world (world.id)}
