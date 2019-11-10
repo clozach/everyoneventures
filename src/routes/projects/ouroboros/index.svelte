@@ -12,7 +12,7 @@
   import { typewriter } from "../../../components/typewriter-transition.js";
   import { worlds } from "../../Model.js";
 
-  const model = worlds.projects[0]; // A bit hacky. Got a better idea? 😬
+  const model = worlds[1]; // A bit hacky. Got a better idea? 😬
   const lcTitle = model.title.toLowerCase();
 
   let showText = false;
@@ -83,7 +83,7 @@
 </style>
 
 <div class="route-animation-container">
-  <a href="projects" on:click={() => TweenMax.to('#logo', 0, { rotation: 0 })}>
+  <a href="/" on:click={() => TweenMax.to('#logo', 0, { rotation: 0 })}>
     <div class="shrinkwrap">
       <img
         id="logo"

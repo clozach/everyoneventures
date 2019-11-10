@@ -11,7 +11,7 @@
   import { typewriter } from "../../../components/typewriter-transition.js";
   import { worlds } from "../../Model.js";
 
-  const model = worlds.projects[1]; // A bit hacky. Got a better idea? 😬
+  const model = worlds[2]; // A bit hacky. Got a better idea? 😬
   const lcTitle = model.title.toLowerCase();
 </script>
 
@@ -57,7 +57,7 @@
 </style>
 
 <div class="route-animation-container" transition:fade>
-  <a href="projects">
+  <a href="/">
     <div class="shrinkwrap">
       <img
         id="logo"

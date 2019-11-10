@@ -13,7 +13,7 @@
   import { oneOf } from "../../../generically-useful/array-manipulating-functions.js";
   import { worlds } from "../../Model.js";
 
-  const model = worlds.writing[0]; // A bit hacky. Got a better idea? 😬
+  const model = worlds[0]; // A bit hacky. Got a better idea? 😬
   const lcTitle = model.title.toLowerCase();
   const pronouncement =
     oneOf([
@@ -97,7 +97,7 @@
 </style>
 
 <div class="route-animation-container">
-  <a href="writing" on:click={() => TweenMax.to('#logo', 0, { rotation: 0 })}>
+  <a href="/" on:click={() => TweenMax.to('#logo', 0, { rotation: 0 })}>
     <div class="shrinkwrap">
       <img
         id="logo"

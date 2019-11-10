@@ -18,7 +18,7 @@
   import { send, receive } from "../../../components/crossfade.js";
   import { worlds } from "../../Model.js";
 
-  const model = worlds.writing[1]; // A bit hacky. Got a better idea? 😬
+  const model = worlds[3]; // A bit hacky. Got a better idea? 😬
   const lcTitle = model.title.toLowerCase();
 </script>
 
@@ -70,7 +70,7 @@
     out:send={{ key: `img${lcTitle}` }}
     src={model.image}
     alt={model.description} />
-  <a href="writing">
+  <a href="/">
     <div class="shrinkwrap positioner">
       <h1
         out:send={{ key: `title${lcTitle}` }}

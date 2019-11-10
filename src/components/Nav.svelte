@@ -16,8 +16,6 @@
   //    ██║   ╚██████╔╝██║         ██║ ╚████║██║  ██║ ╚████╔╝
   //    ╚═╝    ╚═════╝ ╚═╝         ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝
 
-  import { fly } from "svelte/transition";
-  import { quintOut } from "svelte/easing";
   import { send, receive } from "./crossfade.js";
 
   export let segment;
@@ -94,63 +92,13 @@
   }
 </style>
 
-{#if $navType === 'writing'}
+{#if $navType !== 'topnav'}
   <nav>
     <div>
-      <a href="/writing">
-        <div
-          class="e"
-          in:receive={{ key: 'navwriting' }}
-          out:send={{ key: 'navwriting' }}>
-          e
-        </div>
-        <div class="v" transition:fly={flightTransition}>v</div>
+      <a href="/">
+        <div class="e" in:receive={{ key: 'e' }} out:send={{ key: 'e' }}>e</div>
+        <div class="v" in:receive={{ key: 'v' }} out:send={{ key: 'v' }}>v</div>
       </a>
     </div>
-  </nav>
-{:else if $navType === 'projects'}
-  <nav>
-    <div>
-      <a href="/projects">
-        <div
-          class="e"
-          in:receive={{ key: 'navprojects' }}
-          out:send={{ key: 'navprojects' }}>
-          e
-        </div>
-        <div class="v" transition:fly={flightTransition}>v</div>
-      </a>
-    </div>
-  </nav>
-{:else}
-  <nav>
-    <ul>
-      <li>
-        <a
-          class={segment === undefined ? 'selected' : ''}
-          href="."
-          transition:fly={flightTransition}>
-          about
-        </a>
-      </li>
-      <li>
-        <a
-          class={segment === 'writing' ? 'selected' : ''}
-          href="writing"
-          in:receive={{ key: 'navwriting' }}
-          out:send={{ key: 'navwriting' }}>
-          writing
-        </a>
-      </li>
-      <li>
-        <a
-          class={segment === 'projects' ? 'selected' : ''}
-          href="projects"
-          in:receive={{ key: 'navprojects' }}
-          out:send={{ key: 'navprojects' }}>
-          projects
-        </a>
-      </li>
-    </ul>
   </nav>
 {/if}

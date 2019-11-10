@@ -20,8 +20,7 @@
 
 <style>
   main {
-    max-width: 56em;
-    background-color: white;
+    background-color: hsla(219, 100%, 98%, 1);
     height: 100vh;
     margin: 0 auto;
     box-sizing: border-box;
