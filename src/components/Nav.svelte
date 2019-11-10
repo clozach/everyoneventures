@@ -1,6 +1,6 @@
 <script context="module">
   import { writable } from "svelte/store";
-  export let navType = writable("topnav");
+  export let navType = writable("top");
   export const navTypes = {
     top: "top",
     writing: "writing",
@@ -92,7 +92,7 @@
   }
 </style>
 
-{#if $navType !== 'topnav'}
+{#if $navType !== 'top'}
   <nav>
     <div>
       <a href="/">
