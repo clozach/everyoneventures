@@ -27,11 +27,11 @@
 
   let width;
   let height;
-  let abbreviated = false;
+  let showFullText = true;
   let tl = new TimelineLite();
 
   tl.add("start").add(() => {
-    abbreviated = false;
+    showFullText = true;
   });
 
   onMount(() => {
@@ -76,7 +76,7 @@
         .to(`#${ventures}`, fadeDuration, { opacity: 1 }, "start")
         .add("logo")
         .add(() => {
-          abbreviated = true;
+          showFullText = false;
         })
         .to(`#${everyone}`, logoDuration, { x: "+=320", opacity: 0 }, "logo")
         .to(`#${ventures}`, logoDuration, { x: "-=280", opacity: 0 }, "logo")
@@ -142,7 +142,7 @@
 
 <h1 out:send={{ key: `e` }} id={e}>e</h1>
 <h1 out:send={{ key: `v` }} id={v}>v</h1>
-{#if !abbreviated}
+{#if showFullText}
   <h1 in:receive={{ key: `e` }} out:typewriter={{ speed: 30 }} id={everyone}>
     everyone
   </h1>
