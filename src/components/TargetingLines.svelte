@@ -1,6 +1,6 @@
 <script>
   const lh = 3.5; // Line Height sets the intersection point that I'll use to target PicLink placements. Can't think of a better name for this right now. 🤔
-  const lineStroke = 4;
+  const lineStroke = 2;
   const lineColor = "white";
 
   let width;

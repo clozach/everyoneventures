@@ -20,7 +20,7 @@
 
 <style>
   main {
-    background-color: hsla(219, 100%, 98%, 1);
+    background-color: hsla(219, 100%, 97%, 1);
     height: 100vh;
     margin: 0 auto;
     box-sizing: border-box;

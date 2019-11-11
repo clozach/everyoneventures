@@ -59,14 +59,14 @@
           showFullText = false; // This triggers animation in `EV`
         })
         .add("piclinks")
-        .to("line", fadeDuration * 1, { opacity: 0 }, "piclinks")
+        .to("svg", fadeDuration * 1, { opacity: 0 }, "piclinks")
         .to(
           `#${worlds[0].id}`,
           fadeDuration,
           {
             opacity: 1
           },
-          "piclinks+=1"
+          "piclinks+=1.5"
         )
         .to(`#${worlds[1].id}`, fadeDuration, {
           opacity: 1
@@ -82,12 +82,15 @@
 </script>
 
 <style>
-  div {
+  .worlds {
+    opacity: 1;
     position: absolute;
+    top: 0;
+  }
+
+  .world {
     opacity: 0;
-    /* margin: 0 auto; */
-    /* margin-top: 45vh; */
-    /*    display: table; /* Tricks the text into respecting the centering margin 🙄 */
+    position: absolute;
   }
 </style>
 
@@ -95,14 +98,16 @@
 
 <Lines />
 
-{#each worlds as world (world.id)}
-  <div id={world.id}>
-    <PicLink
-      title={world.title}
-      imageURL={world.image}
-      description={world.description}
-      targetURL={world.targetURL} />
-  </div>
-{/each}
-
 <EV {showFullText} />
+
+<div class="worlds">
+  {#each worlds as world (world.id)}
+    <div id={world.id} class="world">
+      <PicLink
+        title={world.title}
+        imageURL={world.image}
+        description={world.description}
+        targetURL={world.targetURL} />
+    </div>
+  {/each}
+</div>
