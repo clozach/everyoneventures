@@ -34,42 +34,6 @@
     z-index: 1000;
   }
 
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  /* clearfix */
-  ul::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-
-  li {
-    display: block;
-    float: left;
-  }
-
-  .selected {
-    position: relative;
-    display: inline-block;
-  }
-
-  .selected::after {
-    position: absolute;
-    content: "";
-    width: calc(100% - 1em);
-    height: 0.5rem;
-    background-color: hsl(243, 90%, 65%);
-    display: block;
-    bottom: -1px;
-  }
-
-  li > a {
-    padding: 1rem 0.5rem;
-  }
-
   a {
     text-decoration: none;
     display: block;
