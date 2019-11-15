@@ -10,6 +10,10 @@
   import Worlds from "../components/Worlds.svelte";
   import Fullscreen from "../components/Fullscreen.svelte";
   import { worlds } from "./Model.js";
+  import {
+    introAnimation,
+    introAnimationStates
+  } from "../components/AnimationStore.js";
   import { TimelineLite } from "gsap";
   import { typewriter } from "../components/typewriter-transition.js";
   import { send, receive } from "../components/crossfade.js";
@@ -27,18 +31,14 @@
 
   let width;
   let height;
-  let showFullText = true;
   let tl = new TimelineLite();
-
-  tl.add("start").add(() => {
-    showFullText = true;
-  });
 
   onMount(() => {
     if (firstLaunch) {
+      $introAnimation = introAnimationStates.inProgress;
       setTimeout(() => {
         tl.add(() => {
-          showFullText = false; // This triggers animation in `EV`
+          $introAnimation = introAnimationStates.complete; // This triggers animation in `EV`
         })
           .add("piclinks")
           .to("svg", fadeDuration * 1, { opacity: 0 }, "piclinks")
@@ -69,7 +69,7 @@
 
 <Lines />
 
-<EV {showFullText} />
+<EV />
 
 <Fullscreen>
   <Worlds />

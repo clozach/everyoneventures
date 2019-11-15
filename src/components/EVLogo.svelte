@@ -1,19 +1,27 @@
 <script>
   import { onMount, onDestroy, afterUpdate } from "svelte";
   import { send, receive } from "./crossfade.js";
+  import {
+    introAnimation,
+    introAnimationStates
+  } from "../components/AnimationStore.js";
   import { typewriter } from "../components/typewriter-transition.js";
   import { TimelineLite } from "gsap";
-
-  export let showFullText;
 
   let width;
   let height;
   let tl = new TimelineLite();
 
-  $: if (!showFullText) {
+  $: if ($introAnimation === introAnimationStates.inProgress) {
     // Animate "everyone" so it appears to be collapsing to the right, instead of to the left during the typewriter animation. Bit of a hack, but I think it's sufficiently convincing.
 
-    tl.to(`#logo-everyone`, 2, { x: "+=1500", opacity: 0 });
+    tl.to(`#logo-everyone`, 2, { x: "+=1500", opacity: 0 }, "+=1.6");
+
+    // ⚠️ The magic-number `"+=1.6"` comes from the need to match the
+    //    magic-number 1600 `setTimeout` delay in routes/index.svelte.
+    //    If you (who's probably me) ever find yourself playing around
+    //    with this value, stop now and link these things explicitly
+    //    in code…then delete this long-widned comment. 🌬
   }
 </script>
 
@@ -73,7 +81,7 @@
       <div out:send={{ key: `e` }} id="logo-e">e</div>
       <div out:send={{ key: `v` }} id="logo-v">v</div>
 
-      {#if showFullText}
+      {#if $introAnimation !== introAnimationStates.complete}
         <h1 out:typewriter={{ speed: 30 }} id="logo-everyone">everyone</h1>
         <h1 out:typewriter={{ speed: 30 }} id="logo-ventures">ventures</h1>
       {/if}
