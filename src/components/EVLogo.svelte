@@ -78,8 +78,8 @@
 <section class="overlapping">
   <div class="container">
     <div id="ev">
-      <div out:send={{ key: `e` }} id="logo-e">e</div>
-      <div out:send={{ key: `v` }} id="logo-v">v</div>
+      <div in:receive={{ key: `e` }} out:send={{ key: `e` }} id="logo-e">e</div>
+      <div in:receive={{ key: `v` }} out:send={{ key: `v` }} id="logo-v">v</div>
 
       {#if $introAnimation !== introAnimationStates.complete}
         <h1 out:typewriter={{ speed: 30 }} id="logo-everyone">everyone</h1>
